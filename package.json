@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "npm run test:lint && npm run test:unit",
     "test:unit": "jest src --coverage",
     "test:lint": "eslint src",
     "lint:fix": "eslint src --fix",
