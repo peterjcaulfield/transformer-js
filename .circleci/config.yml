@@ -30,7 +30,10 @@ jobs:
       - run:
           name: unit tests
           command: npm run test
-          
+
+      - run:
+          name: build
+          command: npm run build
 
       - deploy:
           name: publish
