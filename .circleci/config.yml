@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:6.10
+
+    working_directory: ~/transformer-js
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      
+      - run:
+          name: configure NPM registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+
+      - run:
+          name: install dependencies
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+        
+      - run:
+          name: unit tests
+          command: npm run test
+          
+
+      - deploy:
+          name: publish
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              npm publish && npm run release:tag;
+            fi
