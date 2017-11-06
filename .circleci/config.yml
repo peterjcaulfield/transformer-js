@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/node:6.10
 
-    working_directory: ~/middy
+    working_directory: ~/transformer-js
 
     steps:
       - checkout
@@ -31,9 +31,6 @@ jobs:
           name: unit tests
           command: npm test
           
-      - run:
-          name: coverage reporting
-          command: npm run coverage:submit
 
       - deploy:
           name: publish
