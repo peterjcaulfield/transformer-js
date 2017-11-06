@@ -4,12 +4,11 @@ jobs:
     docker:
       - image: circleci/node:6.10
 
-    working_directory: ~/transformer-js
+    working_directory: ~/middy
 
     steps:
       - checkout
 
-      - run:
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -32,6 +31,10 @@ jobs:
           name: unit tests
           command: npm test
           
+      - run:
+          name: coverage reporting
+          command: npm run coverage:submit
+
       - deploy:
           name: publish
           command: |
