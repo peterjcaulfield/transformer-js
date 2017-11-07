@@ -43,8 +43,8 @@ const matcher = (prop, config, TYPE) => {
  * @property {Function} [transform] - function to compute new value from any
  * value matched by the matcher. If not defined the default transform
  * will be used.
- * @property {Rejex | Function} [key] - used to peform matching on keys.
- * @property {Rejex | Function } [value] - used to perform matching on values.
+ * @property {RegExp | Function} [key] - used to peform matching on keys.
+ * @property {RegExp | Function } [value] - used to perform matching on values.
  */
 
 /**
