@@ -1,3 +1,3 @@
-import transformer from './transformer'
+import transformerFactory from './transformer'
 
-module.exports = transformer
+module.exports = transformerFactory
