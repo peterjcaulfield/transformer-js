@@ -32,6 +32,10 @@ jobs:
           command: npm run test
 
       - run:
+          name: coverage
+          command: npm run coverage:submit
+
+      - run:
           name: build
           command: npm run build
 
