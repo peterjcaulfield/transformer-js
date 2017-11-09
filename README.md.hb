@@ -7,7 +7,7 @@ transformer-js is a library for performing transformations on objects. There are
 example is log redaction:
 
 ```javascript
-import transformer from './transformer-js'
+import transformerFactory from './transformer-js'
 
 const config = {
   transform: val => '[REDACTED]',
@@ -16,7 +16,7 @@ const config = {
   }]
 }
 
-const transform = transformer(config)
+const transform = transformerFactory(config)
 
 const logObj = {
   id: 1,
