@@ -25,19 +25,19 @@ const matcher = (prop, config, TYPE) => {
 }
 
 /**
- * @typedef transformer
- * @type Object
- * @property {Function} map - executes the transformer and returns a new
- * transformed object
- */
-
-/**
  * @typedef matcher
  * @type Object
  * @property {Function} [transform] - default transform that is applied to any
  * value matched unless
  * @property {(Rejex|Function)} [key] - used to peform matching on keys.
  * @property {(Rejex|Function)} [value] - used to perform matching on values.
+ */
+
+/**
+ * @typedef transformer
+ * @type Object
+ * @property {Function} map - executes the transformer and returns a new
+ * transformed object
  */
 
 /**

@@ -44,9 +44,9 @@ Examples directory coming soon...
 ## Typedefs
 
 <dl>
-<dt><a href="#transformer">transformer</a> : <code>Object</code></dt>
-<dd></dd>
 <dt><a href="#matcher">matcher</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#transformer">transformer</a> : <code>Object</code></dt>
 <dd></dd>
 </dl>
 
@@ -62,16 +62,6 @@ Examples directory coming soon...
 | transformerConfig.transform | <code>function</code> | function to compute new value from any value matched by the matcher. If not defined the default transform will be used. |
 | transformerConfig.matchers | [<code>Array.&lt;matcher&gt;</code>](#matcher) | array of matcher objects |
 
-<a name="transformer"></a>
-
-## transformer : <code>Object</code>
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| map | <code>function</code> | executes the transformer and returns a new transformed object |
-
 <a name="matcher"></a>
 
 ## matcher : <code>Object</code>
@@ -83,4 +73,14 @@ Examples directory coming soon...
 | transform | <code>function</code> | default transform that is applied to any value matched unless |
 | key | <code>Rejex</code> \| <code>function</code> | used to peform matching on keys. |
 | value | <code>Rejex</code> \| <code>function</code> | used to perform matching on values. |
+
+<a name="transformer"></a>
+
+## transformer : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| map | <code>function</code> | executes the transformer and returns a new transformed object |
 
