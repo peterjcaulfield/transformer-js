@@ -1,4 +1,5 @@
 # transformer-js
+[![npm version](https://badge.fury.io/js/transformer-js.svg)](https://badge.fury.io/js/transformer-js)
 [![CircleCI](https://circleci.com/gh/peterjcaulfield/transformer-js/tree/master.svg?style=svg)](https://circleci.com/gh/peterjcaulfield/transformer-js/tree/master)
 
 transformer-js is a library for performing transformations on objects. There are many use cases. One
