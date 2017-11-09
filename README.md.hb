@@ -1,11 +1,10 @@
 # transformer-js
+[![CircleCI](https://circleci.com/gh/peterjcaulfield/transformer-js/tree/master.svg?style=svg)](https://circleci.com/gh/peterjcaulfield/transformer-js/tree/master)
 
-Library for performing transformations on objects. There are many use cases. One
+transformer-js is a library for performing transformations on objects. There are many use cases. One
 example is log redaction:
 
 ```javascript
-// log redaction with transformer-js
-
 import transformer from './transformer-js'
 
 const config = {
@@ -24,7 +23,6 @@ const logObj = {
 }
 
 console.log(transform.map(logObj))
-
 
 // outputs
 
