@@ -3,3 +3,4 @@ lib
 .tern-port
 node_modules
 coverage
+docs

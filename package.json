@@ -1,6 +1,6 @@
 {
   "name": "transformer-js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -8,7 +8,11 @@
     "test:unit": "jest src --coverage",
     "test:lint": "eslint src",
     "lint:fix": "eslint src --fix",
+    "build:all": "npm run build && npm run build:docs && npm run build:readme",
     "build": "babel --out-dir lib --ignore *.test.js --copy-files src/",
+    "build:docs": "jsdoc --readme README.md --package package.json --destination docs src",
+    "build:readme": "jsdoc2md --template README.md.hb src/* > README.md",
+    "coverage:submit": "codecov",
     "release:tag": "git tag $npm_package_version && git push --tags"
   },
   "author": "",
@@ -18,7 +22,7 @@
   },
   "keywords": [
     "Transform",
-    "Transformer", 
+    "Transformer",
     "Presenter",
     "Sanitizer",
     "Redact"
@@ -27,6 +31,7 @@
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.2.0",
     "babel-preset-env": "^1.6.1",
+    "codecov": "^3.0.0",
     "eslint": "^4.10.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
@@ -35,6 +40,8 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^21.2.1",
+    "js-doc": "^0.5.0",
+    "jsdoc-to-markdown": "^3.0.1",
     "prettier": "^1.7.4"
   },
   "files": [
@@ -47,6 +54,6 @@
     "collectCoverageFrom": [
       "src/*.js",
       "!src/*.test.js"
-    ] 
+    ]
   }
 }
