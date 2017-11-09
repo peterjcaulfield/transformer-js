@@ -32,13 +32,21 @@ const matcher = (prop, config, TYPE) => {
  */
 
 /**
+ * @typedef matcher
+ * @type Object
+ * @property {Function} [transform] - default transform that is applied to any
+ * value matched unless
+ * @property {(Rejex|Function)} [key] - used to peform matching on keys.
+ * @property {(Rejex|Function)} [value] - used to perform matching on values.
+ */
+
+/**
  * @function transformerFactory
  * @param {Object} transformerConfig
- * @param {Function} transformerConfig.transform - function to compute new value from any
- * value matched by the matcher. If not defined the default transform
- * will be used.
- * @param {(Rejex|Function)} transformerConfig.key - used to peform matching on keys.
- * @param {(Rejex|Function)} transformerConfig.value - used to perform matching on values.
+ * @param {Function} transformerConfig.transform - function to compute new
+ * value from any value matched by the matcher. If not defined the default
+ * transform will be used.
+ * @param {Array<matcher>} transformerConfig.matchers - array of matcher objects
  * @return {transformer} - a transformer instance
  */
 const transformerFactory = userConfig => {

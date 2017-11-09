@@ -6,7 +6,7 @@ example is log redaction:
 ```javascript
 // log redaction with transformer-js
 
-import transformerFactory from 'transformer-js'
+import transformer from './transformer-js'
 
 const config = {
   transform: val => '[REDACTED]',
@@ -15,7 +15,7 @@ const config = {
   }]
 }
 
-const transform = transformerFactory(config)
+const transform = transformer(config)
 
 
 const logObj = {
@@ -50,6 +50,8 @@ Examples directory coming soon...
 <dl>
 <dt><a href="#transformer">transformer</a> : <code>Object</code></dt>
 <dd></dd>
+<dt><a href="#matcher">matcher</a> : <code>Object</code></dt>
+<dd></dd>
 </dl>
 
 <a name="transformerFactory"></a>
@@ -62,8 +64,7 @@ Examples directory coming soon...
 | --- | --- | --- |
 | transformerConfig | <code>Object</code> |  |
 | transformerConfig.transform | <code>function</code> | function to compute new value from any value matched by the matcher. If not defined the default transform will be used. |
-| transformerConfig.key | <code>Rejex</code> \| <code>function</code> | used to peform matching on keys. |
-| transformerConfig.value | <code>Rejex</code> \| <code>function</code> | used to perform matching on values. |
+| transformerConfig.matchers | [<code>Array.&lt;matcher&gt;</code>](#matcher) | array of matcher objects |
 
 <a name="transformer"></a>
 
@@ -74,4 +75,16 @@ Examples directory coming soon...
 | Name | Type | Description |
 | --- | --- | --- |
 | map | <code>function</code> | executes the transformer and returns a new transformed object |
+
+<a name="matcher"></a>
+
+## matcher : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| transform | <code>function</code> | default transform that is applied to any value matched unless |
+| key | <code>Rejex</code> \| <code>function</code> | used to peform matching on keys. |
+| value | <code>Rejex</code> \| <code>function</code> | used to perform matching on values. |
 
