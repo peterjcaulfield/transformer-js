@@ -16,7 +16,6 @@ const config = {
 
 const transform = transformer(config)
 
-
 const logObj = {
   id: 1,
   token: 'dfadf2334hjlkjkxxnqqkkq4=='
@@ -25,7 +24,6 @@ const logObj = {
 console.log(transform.map(logObj))
 
 // outputs
-
 {
   id: 1,
   token: '[REDACTED]'

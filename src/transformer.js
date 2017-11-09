@@ -47,7 +47,7 @@ const matcher = (prop, config, TYPE) => {
  * value from any value matched by the matcher. If not defined the default
  * transform will be used.
  * @param {Array<matcher>} transformerConfig.matchers - array of matcher objects
- * @return {transformer} - a transformer instance
+ * @return {transformer} a transformer instance
  */
 const transformerFactory = userConfig => {
   const config = Object.assign(
