@@ -1,6 +1,6 @@
 {
   "name": "transformer-js",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -46,6 +46,7 @@
   },
   "files": [
     "README.md",
+    "LICENSE",
     "lib/*",
     "package.json",
     "package.lock"
